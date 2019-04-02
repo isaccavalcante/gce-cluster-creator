@@ -9,11 +9,11 @@ This will create `3` nodes, `n1-standard-1` machine types (1vCPU, 3.75GB) , with
 
 To create, run the following command:
 ```sh
-terraform apply -f
+terraform apply 
 ```
 
 To delete, run the following command:
 ```sh
-terraform destroy -f
+terraform destroy 
 ```
 
