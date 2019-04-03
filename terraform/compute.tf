@@ -30,4 +30,10 @@ resource "google_compute_instance" "my-instance" {
   scratch_disk {
   }
 
+   metadata_startup_script = <<SCRIPT
+apt update -y
+apt install python -y
+SCRIPT
+
+
 }
