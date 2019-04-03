@@ -7,7 +7,8 @@ resource "google_compute_instance" "my-instance" {
   name         = "cluster-node-${count.index}"
   machine_type = "n1-standard-1"
   zone         = "us-west1-a"
-  count        = 3
+  count        = 1
+  tags         = ["web"]
 
    boot_disk {
       initialize_params {
@@ -31,9 +32,9 @@ resource "google_compute_instance" "my-instance" {
   }
 
    metadata_startup_script = <<SCRIPT
-apt update -y
-apt install python -y
-SCRIPT
+      apt update -y
+      apt install python -y
+    SCRIPT
 
 
 }
