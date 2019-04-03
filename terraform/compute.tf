@@ -30,8 +30,6 @@ resource "google_compute_instance" "my-instance" {
     }
   }
 
-  scratch_disk {
-  }
 
    metadata_startup_script = <<SCRIPT
       apt update -y
@@ -39,4 +37,8 @@ resource "google_compute_instance" "my-instance" {
     SCRIPT
 
 
+}
+
+output "ip" {
+  value = "${google_compute_instance.my-instance.network_interface.0.access_config.0.nat_ip}"
 }
