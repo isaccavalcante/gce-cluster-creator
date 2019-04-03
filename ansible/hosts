@@ -1,0 +1,5 @@
+[all:vars]
+ansible_user=myuser
+
+[master]
+127.0.0.1
